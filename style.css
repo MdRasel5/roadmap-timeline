@@ -1,0 +1,700 @@
+/* Typography. */
+
+/* Root. */
+
+:root {
+  /* font-size. */
+  --h4: 32px;
+  --h5: 76px;
+  --nav: 20px;
+  --body: 26px;
+  --family: "VG5000", sans-serif;
+  --font2: "texgyreheros", sans-serif;
+  /* font-size. */
+  /* color. */
+  --color: var(--white);
+  --bg: var(--dark);
+  --white: #fcfcfc;
+  --dark: #080808;
+  --green: #a5fa00;
+  --pink: #ff44bf;
+  --gray: #525252;
+  /* color. */
+  /* inner. */
+  --i1: 200px;
+  --bone: 36px;
+  --header: 120px;
+  /* inner. */
+  /* grid. */
+  --grid_2: 2;
+  --grid_3: 3;
+  /* grid. */
+}
+
+/* Root. */
+
+/* Null. */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--color);
+}
+
+html {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color);
+  font-size: var(--body);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  font-family: var(--family);
+  background-color: var(--bg);
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: var(--color);
+  font-family: var(--family);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--color);
+  font-family: var(--family);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: var(--color);
+  font-family: var(--family);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: var(--color);
+  font-family: var(--family);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color);
+  font-family: var(--family);
+}
+
+/* Null. */
+
+/* Global. */
+
+html {
+  overflow-x: hidden;
+  max-width: calc(100vw - var(--scroll));
+}
+
+html.hidden {
+  overflow: hidden;
+}
+
+.bone {
+  width: 100%;
+  max-width: calc(var(--bone_w) + var(--bone) * 2);
+  margin: 0 auto;
+  padding: 0 var(--bone);
+}
+
+.logo {
+  width: 100%;
+}
+
+.label {
+  --inner: 12px;
+  --color: var(--green);
+  font-size: var(--h4);
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 40.0006px rgba(165, 250, 0, 0.5);
+  letter-spacing: 0.13em;
+}
+
+.label:before {
+  content: "[";
+  margin-right: var(--inner);
+}
+
+.label:after {
+  content: "]";
+  margin-left: var(--inner);
+}
+
+p svg {
+  display: inline;
+  width: auto;
+}
+
+.images__scroll picture:not(.active) {
+  display: none;
+}
+
+/* Roadmap. */
+
+.link-option {
+  color: blue;
+  text-decoration: underline;
+}
+
+.link-option:active {
+  color: #a5fa00;
+  text-decoration: underline;
+}
+
+.roadmap {
+  margin-top: -50vw;
+  background-color: var(--bg);
+}
+
+.roadmap_sticky {
+  position: sticky;
+  overflow: hidden;
+  top: var(--header);
+}
+
+.roadmap_scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: calc(100vh - var(--header));
+  -webkit-transform: translate3d(100vw, 0px, 0px);
+  transform: translate3d(100vw, 0px, 0px);
+}
+
+.roadmap_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  min-height: calc(100vh - var(--header));
+}
+
+.roadmap_title {
+  --color: var(--green);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: calc(100vh - var(--header) - var(--i1));
+}
+
+.roadmap_title svg {
+  width: auto;
+  height: 80%;
+  max-height: 400px;
+}
+
+.roadmap_timelaps .svg {
+  height: 448px;
+  width: auto;
+}
+
+.roadmap_timelaps {
+  position: relative;
+  margin-left: 50vh;
+  height: calc(100vh - var(--header) - var(--i1));
+}
+
+.roadmap_timelaps .svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0px);
+  transform: translate3d(0, -50%, 0px);
+}
+
+/*.roadmap_timelaps .radial {
+  animation: rotate 4s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}*/
+
+.roadmap_timelaps .radial:not(.active) {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.roadmap_timelaps_title {
+  --color: var(--bg);
+  --shadow: var(--green);
+  --size: 4px;
+  position: absolute;
+  top: 0;
+  font-size: 160px;
+  white-space: nowrap;
+  line-height: 1;
+  text-shadow: var(--shadow) 0px 0px var(--size),
+    var(--shadow) 0px 0px var(--size), var(--shadow) 0px 0px var(--size),
+    var(--shadow) 0px 0px var(--size), var(--shadow) 0px 0px var(--size),
+    var(--shadow) 0px 0px var(--size);
+}
+
+.roadmap_timelaps_title:nth-child(1) {
+  left: 0;
+}
+
+.roadmap_timelaps_title:nth-child(2) {
+  left: 2302px;
+}
+
+.roadmap_timelaps_title:nth-child(3) {
+  top: auto;
+  left: 6108px;
+  bottom: 0;
+}
+
+.roadmap_timelaps_title:nth-child(4) {
+  left: 8892px;
+}
+
+.roadmap_timelaps_title:nth-child(5) {
+  top: auto;
+  left: 11672px;
+  bottom: 0;
+}
+
+.roadmap_timelaps_text {
+  position: absolute;
+  top: 0;
+  max-width: 372px;
+}
+
+.roadmap_timelaps_subtitle {
+  font-size: 38px;
+}
+
+.roadmap_timelaps_text p {
+  --size: 17px;
+  margin-top: 20px;
+  font-family: var(--font2);
+  font-size: 17px;
+  min-height: calc(var(--size) * 1.4 * 6);
+}
+
+.roadmap_timelaps_text:nth-child(1),
+.roadmap_timelaps_text:nth-child(3),
+.roadmap_timelaps_text:nth-child(4),
+.roadmap_timelaps_text:nth-child(6),
+.roadmap_timelaps_text:nth-child(8),
+.roadmap_timelaps_text:nth-child(11),
+.roadmap_timelaps_text:nth-child(13),
+.roadmap_timelaps_text:nth-child(14),
+.roadmap_timelaps_text:nth-child(16),
+.roadmap_timelaps_text:nth-child(19) {
+  top: auto;
+  bottom: 0;
+}
+
+.roadmap_timelaps_text:nth-child(1) {
+  left: 753px;
+}
+
+.roadmap_timelaps_text:nth-child(2) {
+  left: 1265px;
+}
+
+.roadmap_timelaps_text:nth-child(3) {
+  left: 1778px;
+}
+
+.roadmap_timelaps_text:nth-child(4) {
+  left: 3024px;
+}
+
+.roadmap_timelaps_text:nth-child(5) {
+  left: 3536px;
+}
+
+.roadmap_timelaps_text:nth-child(6) {
+  left: 4048px;
+}
+
+.roadmap_timelaps_text:nth-child(7) {
+  left: 4560px;
+}
+
+.roadmap_timelaps_text:nth-child(8) {
+  left: 5072px;
+}
+
+.roadmap_timelaps_text:nth-child(9) {
+  left: 5584px;
+}
+
+.roadmap_timelaps_text:nth-child(10) {
+  left: 6830px;
+}
+
+.roadmap_timelaps_text:nth-child(11) {
+  left: 7342px;
+}
+
+.roadmap_timelaps_text:nth-child(12) {
+  left: 7854px;
+}
+
+.roadmap_timelaps_text:nth-child(13) {
+  left: 8366px;
+}
+
+.roadmap_timelaps_text:nth-child(14) {
+  left: 9612px;
+}
+
+.roadmap_timelaps_text:nth-child(15) {
+  left: 10124px;
+}
+
+.roadmap_timelaps_text:nth-child(16) {
+  left: 10636px;
+}
+
+.roadmap_timelaps_text:nth-child(17) {
+  left: 11158px;
+}
+
+.roadmap_timelaps_text:nth-child(18) {
+  left: 12394px;
+}
+
+.roadmap_timelaps_text:nth-child(19) {
+  left: 12906px;
+}
+
+.roadmap_title_mobile,
+.roadmap_timelaps_mobile {
+  display: none;
+}
+
+/* Roadmap. */
+
+@media only screen and (max-width: 900px) {
+  /* Roadmap. */
+  .roadmap_title,
+  .roadmap_timelaps_desktop {
+    display: none;
+  }
+
+  .roadmap {
+    margin-top: calc(var(--i1) / 2);
+  }
+
+  .roadmap_scroll {
+    -webkit-transform: translate3d(0, 0px, 0px);
+    transform: translate3d(0, 0px, 0px);
+  }
+
+  .roadmap_wrapper {
+    display: block;
+    width: calc(100vw - var(--scroll));
+  }
+
+  .roadmap_timelaps {
+    height: auto;
+    max-height: none;
+    margin-left: 0;
+    margin-bottom: var(--i1);
+  }
+
+  .roadmap_title_mobile {
+    --color: var(--green);
+    display: block;
+    max-width: 30%;
+    margin: var(--i1) auto;
+  }
+
+  .roadmap_timelaps_mobile {
+    display: block;
+    max-width: 136px;
+    margin-left: 32px;
+  }
+
+  .roadmap_timelaps_title,
+  .roadmap_timelaps_text {
+    left: 214px !important;
+    bottom: auto !important;
+  }
+
+  .roadmap_timelaps_title:nth-child(2) {
+    top: 1684px;
+  }
+
+  .roadmap_timelaps_title:nth-child(3) {
+    top: 4589px;
+  }
+
+  .roadmap_timelaps_title:nth-child(4) {
+    top: 6688px;
+  }
+
+  .roadmap_timelaps_title:nth-child(5) {
+    top: 8740px;
+  }
+
+  .roadmap_timelaps_text:nth-child(1) {
+    top: 455px;
+  }
+
+  .roadmap_timelaps_text:nth-child(2) {
+    top: 859px;
+  }
+
+  .roadmap_timelaps_text:nth-child(3) {
+    top: 1272px;
+  }
+
+  .roadmap_timelaps_text:nth-child(4) {
+    top: 2139px;
+  }
+
+  .roadmap_timelaps_text:nth-child(5) {
+    top: 2542px;
+  }
+
+  .roadmap_timelaps_text:nth-child(6) {
+    top: 2945px;
+  }
+
+  .roadmap_timelaps_text:nth-child(7) {
+    top: 3359px;
+  }
+
+  .roadmap_timelaps_text:nth-child(8) {
+    top: 3762px;
+  }
+
+  .roadmap_timelaps_text:nth-child(9) {
+    top: 4176px;
+  }
+
+  .roadmap_timelaps_text:nth-child(10) {
+    top: 5040px;
+  }
+
+  .roadmap_timelaps_text:nth-child(11) {
+    top: 5444px;
+  }
+
+  .roadmap_timelaps_text:nth-child(12) {
+    top: 5847px;
+  }
+
+  .roadmap_timelaps_text:nth-child(13) {
+    top: 6300px;
+  }
+
+  .roadmap_timelaps_text:nth-child(14) {
+    top: 7127px;
+  }
+
+  .roadmap_timelaps_text:nth-child(15) {
+    top: 7540px;
+  }
+
+  .roadmap_timelaps_text:nth-child(16) {
+    top: 7944px;
+  }
+
+  .roadmap_timelaps_text:nth-child(17) {
+    top: 8357px;
+  }
+
+  .roadmap_timelaps_text:nth-child(18) {
+    top: 9197px;
+  }
+
+  .roadmap_timelaps_text:nth-child(19) {
+    top: 9610px;
+  }
+
+  /* Roadmap. */
+}
+
+@media only screen and (max-width: 600px) {
+  /* Roadmap. */
+  .roadmap {
+    margin-top: var(--i1);
+  }
+
+  .roadmap_timelaps_title {
+    font-size: 100px;
+    white-space: normal;
+  }
+
+  .roadmap_timelaps_mobile {
+    margin-left: -4px;
+    width: 112px;
+  }
+
+  .roadmap_timelaps_subtitle {
+    font-size: 26px;
+  }
+
+  .roadmap_timelaps_title,
+  .roadmap_timelaps_text {
+    left: 92px !important;
+    max-width: calc(100% - 100px);
+  }
+
+  .roadmap_timelaps_title:nth-child(2) {
+    top: 1384px;
+  }
+
+  .roadmap_timelaps_title:nth-child(3) {
+    top: 3779px;
+  }
+
+  .roadmap_timelaps_title:nth-child(4) {
+    top: 5508px;
+    left: 120px !important;
+  }
+
+  .roadmap_timelaps_title:nth-child(5) {
+    top: 7200px;
+    left: 112px !important;
+  }
+
+  .roadmap_timelaps_text:nth-child(1) {
+    top: 375px;
+  }
+
+  .roadmap_timelaps_text:nth-child(2) {
+    top: 709px;
+  }
+
+  .roadmap_timelaps_text:nth-child(3) {
+    top: 1042px;
+  }
+
+  .roadmap_timelaps_text:nth-child(4) {
+    top: 1756px;
+  }
+
+  .roadmap_timelaps_text:nth-child(5) {
+    top: 2097px;
+  }
+
+  .roadmap_timelaps_text:nth-child(6) {
+    top: 2435px;
+  }
+
+  .roadmap_timelaps_text:nth-child(7) {
+    top: 2769px;
+  }
+
+  .roadmap_timelaps_text:nth-child(8) {
+    top: 3102px;
+  }
+
+  .roadmap_timelaps_text:nth-child(9) {
+    top: 3436px;
+  }
+
+  .roadmap_timelaps_text:nth-child(10) {
+    top: 4150px;
+  }
+
+  .roadmap_timelaps_text:nth-child(11) {
+    top: 4484px;
+  }
+
+  .roadmap_timelaps_text:nth-child(12) {
+    top: 4817px;
+  }
+
+  .roadmap_timelaps_text:nth-child(13) {
+    top: 5190px;
+  }
+
+  .roadmap_timelaps_text:nth-child(14) {
+    top: 5867px;
+  }
+
+  .roadmap_timelaps_text:nth-child(15) {
+    top: 6210px;
+  }
+
+  .roadmap_timelaps_text:nth-child(16) {
+    top: 6544px;
+  }
+
+  .roadmap_timelaps_text:nth-child(17) {
+    top: 6877px;
+  }
+
+  .roadmap_timelaps_text:nth-child(18) {
+    top: 7577px;
+  }
+
+  .roadmap_timelaps_text:nth-child(19) {
+    top: 7920px;
+  }
+
+  /* Roadmap. */
+}
+
+@media only screen and (max-width: 370px) {
+  .roadmap_timelaps_title {
+    font-size: 80px;
+  }
+  /* Roadmap. */
+}
+
+@media only screen and (max-height: 860px) {
+  /* Roadmap. */
+
+  .roadmap_timelaps_text:nth-child(1),
+  .roadmap_timelaps_text:nth-child(11),
+  .roadmap_timelaps_text:nth-child(13),
+  .roadmap_timelaps_text:nth-child(14),
+  .roadmap_timelaps_text:nth-child(16),
+  .roadmap_timelaps_text:nth-child(19),
+  .roadmap_timelaps_text:nth-child(3),
+  .roadmap_timelaps_text:nth-child(4),
+  .roadmap_timelaps_text:nth-child(6),
+  .roadmap_timelaps_text:nth-child(8) {
+    bottom: -40px;
+  }
+
+  .roadmap_timelaps_title:nth-child(3),
+  .roadmap_timelaps_title:nth-child(5) {
+    bottom: -40px;
+  }
+
+  /* Roadmap. */
+}
